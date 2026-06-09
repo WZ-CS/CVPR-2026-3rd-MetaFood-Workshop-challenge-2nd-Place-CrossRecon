@@ -1,0 +1,93 @@
+pipeline:
+  mode: lite
+  frame_max_size: 512
+  candidate_frames_per_state: 16
+  keyframes_per_state: 8
+  before_window: [0.0, 0.25]
+  after_window: [0.75, 1.0]
+  grid_size: 96
+  plate_diameter_cm: 20.0
+  debug_visualizations: true
+
+fusion:
+  gamma: 8.0
+  tau: 0.6
+  beta_before: 1.0
+  beta_after: 1.3
+  discrepancy_threshold: 0.5
+
+lite_backend:
+  min_food_area_ratio: 0.015
+  completion_bias_after: 0.65
+  path_b_prior_weight: 0.65
+
+backends:
+  segmentation:
+    name: groundingdino_sam2
+    weights: null
+    config: null
+  pi3:
+    weights: null
+    config: null
+  generative:
+    gpt_image_model: gpt-image-2
+    hunyuan_weights: null
+    hunyuan_config: null
+    api_key_env: OPENAI_API_KEY
+
+food_priors:
+  default:
+    volume_ml: 180.0
+    height_cm: 3.0
+  roasted_chicken_leg:
+    volume_ml: 170.0
+    height_cm: 4.8
+  quesadilla:
+    volume_ml: 150.0
+    height_cm: 1.8
+  pizza:
+    volume_ml: 150.0
+    height_cm: 1.4
+  muffin:
+    volume_ml: 210.0
+    height_cm: 5.0
+  hotdog:
+    volume_ml: 260.0
+    height_cm: 4.0
+  grilled_salmon:
+    volume_ml: 120.0
+    height_cm: 2.8
+  garlic_bread:
+    volume_ml: 95.0
+    height_cm: 2.5
+  croissant:
+    volume_ml: 110.0
+    height_cm: 3.5
+  crab_cake:
+    volume_ml: 75.0
+    height_cm: 2.2
+  cinnamon_roll:
+    volume_ml: 210.0
+    height_cm: 4.4
+  chicken_wings:
+    volume_ml: 120.0
+    height_cm: 3.8
+  chicken_sandwich:
+    volume_ml: 360.0
+    height_cm: 5.5
+  cheesecake:
+    volume_ml: 230.0
+    height_cm: 4.5
+  burrito:
+    volume_ml: 520.0
+    height_cm: 5.2
+  breaded_fish:
+    volume_ml: 120.0
+    height_cm: 2.6
+  bagel:
+    volume_ml: 220.0
+    height_cm: 4.0
+  apple:
+    volume_ml: 280.0
+    height_cm: 7.0
+

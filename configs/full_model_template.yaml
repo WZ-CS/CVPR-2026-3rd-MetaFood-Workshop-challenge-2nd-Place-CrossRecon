@@ -1,0 +1,29 @@
+pipeline:
+  mode: full
+
+backends:
+  segmentation:
+    name: groundingdino_sam2
+    # Fill these after the official reproduction package is prepared.
+    weights: /path/to/sam2_or_groundingdino_weights
+    config: /path/to/model_config.yaml
+    prompts:
+      - plate
+      - hand
+      - fork
+      - spoon
+      - knife
+      - chopsticks
+
+  pi3:
+    weights: /path/to/pi3_weights
+    config: /path/to/pi3_config.yaml
+    keyframes: 8
+
+  generative:
+    gpt_image_model: gpt-image-2
+    api_key_env: OPENAI_API_KEY
+    views: 6
+    hunyuan_weights: /path/to/hunyuan3d_weights
+    hunyuan_config: /path/to/hunyuan3d_config.yaml
+

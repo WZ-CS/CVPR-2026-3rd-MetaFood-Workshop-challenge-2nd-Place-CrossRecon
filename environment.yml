@@ -1,0 +1,15 @@
+name: crossrecon
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.8
+  - numpy
+  - scipy
+  - scikit-image
+  - pillow
+  - pyyaml
+  - tqdm
+  - pip
+  - pip:
+      - opencv-python
+

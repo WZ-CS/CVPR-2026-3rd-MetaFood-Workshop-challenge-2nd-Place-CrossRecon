@@ -1,0 +1,13 @@
+numpy>=1.20
+opencv-python>=4.5
+scipy>=1.7
+scikit-image>=0.18
+Pillow>=8.0
+PyYAML>=5.4
+tqdm>=4.60
+
+# Optional full-model dependencies are intentionally not pinned here.
+# Install Pi3, SAM2, GroundingDINO, GPT Image API clients, and Hunyuan3D
+# from their official repositories once the corresponding weights/API keys
+# are provided.
+
